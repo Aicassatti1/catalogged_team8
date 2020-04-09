@@ -17,6 +17,7 @@ class SignupPage extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
+        title: Text("Sign Up")
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {

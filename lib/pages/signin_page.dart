@@ -9,12 +9,14 @@ class SigninPage extends StatelessWidget {
       appBar: AppBar(
         // title: Text('Login'),
         elevation: 0,
-        leading: IconButton(
+        leading:
+        IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
+        title: Text('Sign In'),
       ),
       body: Container(
         padding: const EdgeInsets.all(15),
@@ -137,7 +139,7 @@ class SigninPage extends StatelessWidget {
             ),
             FlatButton(
               child: Text(
-                'Google signup',
+                'Google Signin',
                 style: TextStyle(
                   fontSize: 20,
                 ),
