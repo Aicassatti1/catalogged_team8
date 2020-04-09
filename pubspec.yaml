@@ -48,6 +48,10 @@ flutter:
     - assets/images/411.gif
     - assets/images/phone.gif
     - assets/images/calendar.gif
+    - assets/images/cat.gif
+    - assets/images/rec.gif
+    - assets/images/receipt.png
+    - assets/images/receipt_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

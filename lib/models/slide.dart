@@ -22,12 +22,12 @@ final slideList = [
     imageUrl: 'assets/images/phone.gif',
     title: 'Organize all paper receipts in one place!',
     description:
-        'Introducing a most efficient way to organize all your expensives paperless',
+        'Introducing a more efficient, paperless way to organize all your expenses',
   ),
   Slide(
     imageUrl: 'assets/images/calendar.gif',
     title: 'Set up Return reminders',
     description:
-        'By date or by location, never miss a return date for misplacing a receipt',
+        'Access by date or by location and never miss a return date after misplacing a receipt',
   ),
 ];
