@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../catalogged_icons.dart';
+import 'package:catapp/catalogged_icons.dart';
 
 class SigninPage extends StatelessWidget {
   static const routeName = '/loginPage';
