@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../catalogged_icons.dart';
 
 class SigninPage extends StatelessWidget {
   static const routeName = '/loginPage';
@@ -101,25 +102,7 @@ class SigninPage extends StatelessWidget {
 //                }
 //
 //            )
-            FlatButton(
-              child: Text(
-                'Sign up',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              shape: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white, width: 2),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              padding: const EdgeInsets.all(15),
-              textColor: Colors.white,
-              onPressed: () {},
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            FlatButton(
+            /* FlatButton(
               child: Text(
                 'Google Signup',
                 style: TextStyle(
@@ -136,10 +119,11 @@ class SigninPage extends StatelessWidget {
             ),
             SizedBox(
               height: 20,
-            ),
-            FlatButton(
-              child: Text(
-                'Google Signin',
+            ), */
+            FlatButton.icon(
+              icon: Icon(Catalogged.google),
+              label: Text(
+                'Sign in with Google',
                 style: TextStyle(
                   fontSize: 20,
                 ),

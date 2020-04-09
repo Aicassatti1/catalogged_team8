@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './pages/intro_page.dart';
 import './pages/signin_page.dart';
 import './pages/signup_page.dart';
+import './catalogged_icons.dart';
 
 void main() => runApp(MyApp());
 
