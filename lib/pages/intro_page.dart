@@ -132,15 +132,15 @@ class _IntroPageState extends State<IntroPage> {
                           Navigator.of(context).pushNamed(SigninPage.routeName);
                         },
                       ),
-                      FlatButton(
+                      /*FlatButton(
                         child: Text(
                           'Home',
                           style: TextStyle(fontSize: 18),
                         ),
                         onPressed: () {
                           Navigator.of(context).pushNamed(HomePage.routeName);
-                        },
-                      ),
+                        },*/
+                      //),
                     ],
                   ),
                 ],
