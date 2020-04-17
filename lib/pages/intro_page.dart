@@ -7,6 +7,8 @@ import '../models/slide.dart';
 import '../widgets/slide_dots.dart';
 import '../pages/signin_page.dart';
 import '../pages/signup_page.dart';
+import '../pages/home_page.dart';
+
 
 class IntroPage extends StatefulWidget {
   @override
@@ -128,6 +130,15 @@ class _IntroPageState extends State<IntroPage> {
                         ),
                         onPressed: () {
                           Navigator.of(context).pushNamed(SigninPage.routeName);
+                        },
+                      ),
+                      FlatButton(
+                        child: Text(
+                          'Home',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(HomePage.routeName);
                         },
                       ),
                     ],
