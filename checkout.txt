@@ -1,0 +1,10 @@
+ 'id_receipt'= id_receipt;
+ 'expense_type'= expense_type;  
+ 'id_category' = id_category;   
+ 'id_company' = id_company;    
+ 'id_person' = id_person;    
+ 'id_store' = id_store;    
+ 'payment_type' = payment_type;  
+ 'purchase_date' = purchase_date; 
+ 'return_date' = return_date;   
+ 'survey_link' = survey_link;   
