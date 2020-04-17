@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:catapp/catalogged_icons.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:async';
+import '../pages/home_page.dart';
+
+final GoogleSignIn _googleSignIn = GoogleSignIn();
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SigninPage extends StatelessWidget {
   static const routeName = '/loginPage';
@@ -10,8 +17,7 @@ class SigninPage extends StatelessWidget {
       appBar: AppBar(
         // title: Text('Login'),
         elevation: 0,
-        leading:
-        IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {
             Navigator.of(context).pop();
@@ -134,11 +140,33 @@ class SigninPage extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(15),
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                FirebaseUser user = null;
+                user = _handleSignIn() as FirebaseUser;
+                if (user != null) {
+                  Navigator.of(context).pushNamed(HomePage.routeName);
+                }
+              },
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<FirebaseUser> _handleSignIn() async {
+    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    final FirebaseUser user =
+        (await _auth.signInWithCredential(credential)).user;
+    print("this is signed in from: " + user.displayName);
+    return user;
   }
 }
