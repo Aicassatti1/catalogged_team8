@@ -110,7 +110,16 @@ class SigninPage extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(15),
                 textColor: Colors.white,
-                onPressed: () {},
+                onPressed: () {
+                  //Navigator.of(context).pushNamed(HomePage.routeName);
+                  _keyForm.currentState.save();
+                  //print(_email);
+                  //print(_password);
+                  dynamic user = _signIn(_email, _password);
+                  if(user!=null){
+                    Navigator.of(context).pushNamed(HomePage.routeName);
+                  }
+                }
               ),
               SizedBox(
                 height: 20,
@@ -144,6 +153,18 @@ class SigninPage extends StatelessWidget {
     );
   }
 
+  Future<FirebaseUser> _signIn(String email, String password) async{
+    try{
+      AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      FirebaseUser user = result.user;
+      return user;
+
+    }
+    catch(e){
+      print(e.toString());
+    }
+  }
+
   Future<FirebaseUser> _handleSignIn() async {
     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleAuth =
@@ -160,12 +181,6 @@ class SigninPage extends StatelessWidget {
     return user;
   }
 
-  Future<FirebaseUser> _normalSignIn() async{
-    final formState = _keyForm.currentState;
-    if(formState.validate()){
-      //TODO firebase login
-    }
-  }
 }
 
 
