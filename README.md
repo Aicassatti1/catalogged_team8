@@ -1,6 +1,6 @@
 # catapp
 
-mobile app 5th try
+mobile app to save store receipts and remind user to return items. 
 
 ## Getting Started
 
